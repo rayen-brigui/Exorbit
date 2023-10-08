@@ -6,15 +6,13 @@
     "build": "vite build"
   },
   "dependencies": {
-    "three": "^0.157.0" // Adjust the version as needed
-    // Add other dependencies here if required
+    "three": "^0.157.0" 
   },
   "devDependencies": {
-    "vite": "^4.4.11" // Adjust the version as needed
-    // Add other dev dependencies here if required
+    "vite": "^4.4.11" 
   },
   "engines": {
-    "node": "18.x" // Vercel supports Node.js 14.x at the time of my last knowledge update
+    "node": "18.x"
   },
   "license": "MIT",
   "main": "index.js",
@@ -22,7 +20,7 @@
   "type": "module",
   "vite": {
     "build": {
-      "outDir": "public" // The directory where Vite will output your built files
+      "outDir": "public"
     }
   }
 }
