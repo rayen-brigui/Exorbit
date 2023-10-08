@@ -18,7 +18,7 @@ camera.position.set(0, 0, 10);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
-const sunTexture = new THREE.TextureLoader().load("assets/sun.jpg");
+const sunTexture = new THREE.TextureLoader().load("./sun.jpg");
 
 // Create the Sun
 const sunGeometry = new THREE.SphereGeometry(1.5, 32, 32);
@@ -27,16 +27,14 @@ const sun = new THREE.Mesh(sunGeometry, sunMaterial);
 scene.add(sun);
 
 // Create planets
-const mercuryTexture = new THREE.TextureLoader().load("assets/mercury.jpg");
-const venusTexture = new THREE.TextureLoader().load("assets/venus.jpg");
-const marsTexture = new THREE.TextureLoader().load("assets/mars.jpg");
-const JupiterTexture = new THREE.TextureLoader().load("assets/jupiter.jpg");
-const saturnTexture = new THREE.TextureLoader().load("assets/saturn.jpg");
-const uranusTexture = new THREE.TextureLoader().load("assets/uranus.jpg");
-const neptuneTexture = new THREE.TextureLoader().load("assets/neptune.jpg");
-const earthTexture = new THREE.TextureLoader().load(
-  "assets/earth_nightmap.jpg"
-);
+const mercuryTexture = new THREE.TextureLoader().load("./mercury.jpg");
+const venusTexture = new THREE.TextureLoader().load("./venus.jpg");
+const marsTexture = new THREE.TextureLoader().load("./mars.jpg");
+const JupiterTexture = new THREE.TextureLoader().load("./jupiter.jpg");
+const saturnTexture = new THREE.TextureLoader().load("./saturn.jpg");
+const uranusTexture = new THREE.TextureLoader().load("./uranus.jpg");
+const neptuneTexture = new THREE.TextureLoader().load("./neptune.jpg");
+const earthTexture = new THREE.TextureLoader().load("./earth_nightmap.jpg");
 const planets = [];
 const planetData = [
   {
@@ -167,16 +165,16 @@ planetData.forEach((data) => {
     map: data.map,
   });
   const planet = new THREE.Mesh(planetGeometry, planetMaterial);
-    planet.name = data.name; // Set the name so we can access it later
-    planet.userData.desc = data.desc; // Set the description in userData    
-    planet.userData.distanceFromSun = data.distanceFromSun;
-    planet.userData.radius = data.radius;
-    planet.userData.mass = data.mass;
-    planet.userData.orbitalPeriod = data.orbitalPeriod;
-    planet.userData.rotationPeriod = data.rotationPeriod;
-    planet.userData.moons = data.moons;
-    planet.userData.discoveryDate = data.discoveryDate;
-    planet.userData.discoveredBy = data.discoveredBy;
+  planet.name = data.name; // Set the name so we can access it later
+  planet.userData.desc = data.desc; // Set the description in userData
+  planet.userData.distanceFromSun = data.distanceFromSun;
+  planet.userData.radius = data.radius;
+  planet.userData.mass = data.mass;
+  planet.userData.orbitalPeriod = data.orbitalPeriod;
+  planet.userData.rotationPeriod = data.rotationPeriod;
+  planet.userData.moons = data.moons;
+  planet.userData.discoveryDate = data.discoveryDate;
+  planet.userData.discoveredBy = data.discoveredBy;
   // Position the planets in a circle
   const angle = Math.random() * Math.PI * 2;
   planet.position.set(
@@ -187,11 +185,9 @@ planetData.forEach((data) => {
 
   planets.push(planet);
   scene.add(planet);
-
-
 });
 // Load the background texture
-const spaceTexture = new THREE.TextureLoader().load("assets/stars.jpg");
+const spaceTexture = new THREE.TextureLoader().load("./stars.jpg");
 
 // Create a background sphere with the texture
 const backgroundGeometry = new THREE.SphereGeometry(500, 16, 16);
@@ -235,26 +231,23 @@ planetData.forEach((data) => {
   scene.add(orbitLine);
 });
 
-
-
-
-
-
-
-
 animate();
 function showPlanetInfo(Planet) {
   document.getElementById("planet-name").textContent = Planet.name;
-    document.getElementById("planet-desc").textContent = Planet.userData.desc;
-    document.getElementById("planet-distanceFromSun").textContent = Planet.userData.distanceFromSun;
-    document.getElementById("planet-radius").textContent = Planet.userData.radius;
-    document.getElementById("planet-mass").textContent = Planet.userData.mass;
-    document.getElementById("planet-orbitalPeriod").textContent = Planet.userData.orbitalPeriod;
-    document.getElementById("planet-rotationPeriod").textContent = Planet.userData.rotationPeriod;
-    document.getElementById("planet-moons").textContent = Planet.userData.moons;
-    document.getElementById("planet-discoveryDate").textContent = Planet.userData.discoveryDate;
-    document.getElementById("planet-discoveredBy").textContent = Planet.userData.discoveredBy;
-
+  document.getElementById("planet-desc").textContent = Planet.userData.desc;
+  document.getElementById("planet-distanceFromSun").textContent =
+    Planet.userData.distanceFromSun;
+  document.getElementById("planet-radius").textContent = Planet.userData.radius;
+  document.getElementById("planet-mass").textContent = Planet.userData.mass;
+  document.getElementById("planet-orbitalPeriod").textContent =
+    Planet.userData.orbitalPeriod;
+  document.getElementById("planet-rotationPeriod").textContent =
+    Planet.userData.rotationPeriod;
+  document.getElementById("planet-moons").textContent = Planet.userData.moons;
+  document.getElementById("planet-discoveryDate").textContent =
+    Planet.userData.discoveryDate;
+  document.getElementById("planet-discoveredBy").textContent =
+    Planet.userData.discoveredBy;
 }
 document.addEventListener("click", (event) => {
   // Calculate normalized device coordinates
@@ -266,10 +259,10 @@ document.addEventListener("click", (event) => {
   const intersects = raycaster.intersectObjects(planets);
 
   if (intersects.length > 0) {
-      // Display planet information when clicked
-      console.log('====================================');
-      console.log(intersects[0].object);
-      console.log('====================================');
+    // Display planet information when clicked
+    console.log("====================================");
+    console.log(intersects[0].object);
+    console.log("====================================");
     const planet = intersects[0].object;
     showPlanetInfo(planet); // Use userData to access the desc
   }
