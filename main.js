@@ -18,7 +18,7 @@ camera.position.set(0, 0, 10);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
-const sunTexture = new THREE.TextureLoader().load("./textures/sun.jpg");
+const sunTexture = new THREE.TextureLoader().load("assets/sun.jpg");
 
 // Create the Sun
 const sunGeometry = new THREE.SphereGeometry(1.5, 32, 32);
@@ -27,15 +27,15 @@ const sun = new THREE.Mesh(sunGeometry, sunMaterial);
 scene.add(sun);
 
 // Create planets
-const mercuryTexture = new THREE.TextureLoader().load("./textures/mercury.jpg");
-const venusTexture = new THREE.TextureLoader().load("./textures/venus.jpg");
-const marsTexture = new THREE.TextureLoader().load("./textures/mars.jpg");
-const JupiterTexture = new THREE.TextureLoader().load("./textures/jupiter.jpg");
-const saturnTexture = new THREE.TextureLoader().load("./textures/saturn.jpg");
-const uranusTexture = new THREE.TextureLoader().load("./textures/uranus.jpg");
-const neptuneTexture = new THREE.TextureLoader().load("./textures/neptune.jpg");
+const mercuryTexture = new THREE.TextureLoader().load("assets/mercury.jpg");
+const venusTexture = new THREE.TextureLoader().load("assets/venus.jpg");
+const marsTexture = new THREE.TextureLoader().load("assets/mars.jpg");
+const JupiterTexture = new THREE.TextureLoader().load("assets/jupiter.jpg");
+const saturnTexture = new THREE.TextureLoader().load("assets/saturn.jpg");
+const uranusTexture = new THREE.TextureLoader().load("assets/uranus.jpg");
+const neptuneTexture = new THREE.TextureLoader().load("assets/neptune.jpg");
 const earthTexture = new THREE.TextureLoader().load(
-  "./textures/earth_nightmap.jpg"
+  "assets/earth_nightmap.jpg"
 );
 const planets = [];
 const planetData = [
@@ -191,7 +191,7 @@ planetData.forEach((data) => {
 
 });
 // Load the background texture
-const spaceTexture = new THREE.TextureLoader().load("./textures/stars.jpg");
+const spaceTexture = new THREE.TextureLoader().load("assets/stars.jpg");
 
 // Create a background sphere with the texture
 const backgroundGeometry = new THREE.SphereGeometry(500, 16, 16);
