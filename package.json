@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "node_modules/.bin/vite build"
   },
   "dependencies": {
-    "three": "^0.157.0" 
+    "three": "^0.157.0"
   },
   "devDependencies": {
-    "vite": "^4.4.11" 
+    "vite": "^4.4.11"
   },
   "engines": {
     "node": "18.x"
