@@ -1,61 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Space Brochure</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>Exorbit</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
 
-        canvas {
-            display: block;
-        }
+      canvas {
+        display: block;
+      }
 
-        #info-box {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(146, 146, 146, 0.7);
-            padding: 10px;
-            color: white;
-            border-radius: 5px;
-            height: 800px;
-            width: 300px;
-        }
+      #info-box {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(112, 111, 111, 0.692);
+        padding: 10px;
+        color: white;
+        border-radius: 5px;
+        height: 800px;
+        width: 300px;
+      }
 
-        #info-box h2 {
-            margin: 0;
-            font-size: 1.2rem;
-        }
+      #info-box h2 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
 
-        #info-box p {
-            margin: 5px 0;
-            font-size: 1rem;
-        }
+      #info-box p {
+        margin: 5px 0;
+        font-size: 1rem;
+      }
 
-        #planet-name, #planet-desc {
-            font-weight: bold;
-        }
+
+      #planet-name{
+        font-weight: bold;
+        text-align: center;
+        font-size: 35px;
+        padding:0px 10px;
+        border-radius: 5px 5px 5px 5px;
+        min-width: 300px;
+      }
+      #planet-desc {
+        font-weight: bold;
+        margin: 25px 0;
+      }
+      .title{
+        text-align: center;
+        font-size: 50px;
+        background-color: transparent;
+        position: absolute;
+        color: white;
+        left: 45%;
+        font-family: "apple chancery",fantasy;
+        top: 5px;
+      }
     </style>
-</head>
-<body>
-<div id="info-box">
-    <h2>Planet Information</h2>
-    <p>Name: <span id="planet-name"></span></p>
-    <p>Description: <span id="planet-desc"></span></p>
-    <p>Distance from Sun: <span id="planet-distanceFromSun"></span></p>
-    <p>Radius: <span id="planet-radius"></span></p>
-    <p>Mass: <span id="planet-mass"></span></p>
-    <p>Orbital Period: <span id="planet-orbitalPeriod"></span></p>
-    <p>Rotation Period: <span id="planet-rotationperiod"></span></p>
-    <p>Moons: <span id="planet-moons"></span></p>
-    <p>Discovery Date: <span id="planet-discoveryDate"></span></p>
-    <p>Discovered By: <span id="planet-discoveredBy"></span></p>
-</div>
-<script type="module" src="/main.js"></script>
-<script src="path-to-orbit-controls/OrbitControls.js"></script>
+  </head>
+  <body>
+    <audio hidden autoplay id="myAudio">
+      <source src="music.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+<div class="title">Exorbit</div>
+    <div id="info-box">
+        <h1 style="text-align: center;">
+            Space Travel Agency
+        </h1>
+      <h2>Planet Information</h2>
+      <p>Name: <span id="planet-name"></span></p>
+      <p>Description: <span id="planet-desc"></span></p>
+      <p>Distance From earth: <span id="planet-distanceFromEarth"></span></p>
+      <p>Radius: <span id="planet-radius"></span></p>
+      <p>Mass: <span id="planet-mass"></span></p>
+      <p>Orbital Period: <span id="planet-orbitalPeriod"></span></p>
+      <p>Rotation Period: <span id="planet-rotationPeriod"></span></p>
+      <p>Moons: <span id="planet-moons"></span></p>
+      <p>Discovery Date: <span id="planet-discoveryDate"></span></p>
+      <p>Discovered By: <span id="planet-discoveredBy"></span></p>
 
-</body>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script src="path-to-orbit-controls/OrbitControls.js"></script>
+    <script>
+      const audio = document.getElementById("myAudio");
+      audio.volume = 0.5;
+    </script>
+  </body>
 </html>
