@@ -1,0 +1,20 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore environment variables file
+.env
+
+# Ignore compiled binary files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore package-lock.json file
+package-lock.json
+
+# Ignore .DS_Store files on macOS
+.DS_Store

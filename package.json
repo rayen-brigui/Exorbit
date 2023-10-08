@@ -1,26 +1,13 @@
 {
-  "name": "Nasa Project",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "node_modules/.bin/vite build"
-  },
   "dependencies": {
     "three": "^0.157.0"
   },
   "devDependencies": {
     "vite": "^4.4.11"
   },
-  "engines": {
-    "node": "18.x"
-  },
-  "license": "MIT",
-  "main": "index.js",
-  "private": false,
-  "type": "module",
-  "vite": {
-    "build": {
-      "outDir": "public"
-    }
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   }
 }
