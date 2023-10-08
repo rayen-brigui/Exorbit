@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Space Brochure</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        #info-box {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(146, 146, 146, 0.7);
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+            height: 800px;
+            width: 300px;
+        }
+
+        #info-box h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        #info-box p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        #planet-name, #planet-desc {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div id="info-box">
+    <h2>Planet Information</h2>
+    <p>Name: <span id="planet-name"></span></p>
+    <p>Description: <span id="planet-desc"></span></p>
+    <p>Distance from Sun: <span id="planet-distanceFromSun"></span></p>
+    <p>Radius: <span id="planet-radius"></span></p>
+    <p>Mass: <span id="planet-mass"></span></p>
+    <p>Orbital Period: <span id="planet-orbitalPeriod"></span></p>
+    <p>Rotation Period: <span id="planet-rotationperiod"></span></p>
+    <p>Moons: <span id="planet-moons"></span></p>
+    <p>Discovery Date: <span id="planet-discoveryDate"></span></p>
+    <p>Discovered By: <span id="planet-discoveredBy"></span></p>
+</div>
+<script type="module" src="/main.js"></script>
+<script src="path-to-orbit-controls/OrbitControls.js"></script>
+
+</body>
+</html>
